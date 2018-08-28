@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Custodian.aspx.cs" Inherits="Project.WebForm2" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin.aspx.cs" Inherits="Project.WebForm2" %>
 
 <!DOCTYPE html>
 
@@ -40,7 +40,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <asp:HyperLink ID="hyperlink1" class="navbar-brand page-scroll" NavigateUrl="#" Text="Start Bootstrap" runat="server" /> 
+                <asp:HyperLink ID="hyperlink1" CssClass="navbar-brand page-scroll" NavigateUrl="#" Text="Start Bootstrap" runat="server" /> 
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -50,19 +50,19 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <asp:HyperLink ID="hyperlink2" class="page-scroll" NavigateUrl="#" Text="Trade List" runat="server" /> 
+                       <asp:HyperLink ID="hyperlink2_a" CssClass="page-scroll" NavigateUrl="#" Text="All Trades" runat="server" /> 
                     </li>
                     <li>
-                        <asp:HyperLink ID="hyperlink3" class="page-scroll" NavigateUrl="#" Text="Obligation Report" runat="server" />
+                        <asp:HyperLink ID="hyperlink3_a" CssClass="page-scroll" NavigateUrl="#" Text="Obligation Report" runat="server" />
                     </li>
                     <li>
-                        <asp:HyperLink ID="hyperlink4" class="page-scroll" NavigateUrl="#" Text="Shortages" runat="server" />
+                        <asp:HyperLink ID="hyperlink4_a" CssClass="page-scroll" NavigateUrl="#" Text="Shortages" runat="server" />
                     </li>
                     <li>
-                        <asp:HyperLink ID="hyperlink5" class="page-scroll" NavigateUrl="#" Text="Notification" runat="server" />
+                        <asp:HyperLink ID="hyperlink5_a" CssClass="page-scroll" NavigateUrl="#" Text="Statistics" runat="server" />
                     </li>
                     <li>
-                         <asp:HyperLink ID="hyperlink6" class="page-scroll" NavigateUrl="#" Text="Sign Out" runat="server" />
+                         <asp:HyperLink ID="hyperlink6_a" CssClass="page-scroll" NavigateUrl="#" Text="Sign Out" runat="server" />
                     </li>
                 </ul>
             </div>

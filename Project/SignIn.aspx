@@ -23,11 +23,11 @@
       <img class="mb-4" src="Logos/citi_logo.png" alt="" width="150" height="100"/>
       <h1 class="h3 mb-3 font-weight-normal" style="font-size:30px"> Sign in </h1>
         <label for="inputEmail" class="sr-only">Email address</label>
-        <asp:DropDownList ID="inputEmail" runat="server" Class="form-control">
+        <asp:DropDownList ID="inputEmail" runat="server" CssClass="form-control">
     <asp:ListItem>Username</asp:ListItem>
 </asp:DropDownList>
         <label for="inputPassword" class="sr-only">Password</label>
-        <asp:TextBox ID="inputPassword" runat="server" OnTextChanged="Password" class="form-control" placeholder="Password" TextMode="Password"/>
+        <asp:TextBox ID="inputPassword" runat="server" OnTextChanged="Password" CssClass="form-control" placeholder="Password" TextMode="Password"/>
 
       
       <div class="checkbox mb-3">
@@ -37,7 +37,7 @@
           
           </label>
       </div>
-      <asp:button runat="server" class="btn btn-lg btn-primary btn-block" type="submit" Text="Next" OnClick="Unnamed1_Click" style="background:#275c9a"/>
+      <asp:button runat="server" Cssclass="btn btn-lg btn-primary btn-block" Text="Next" OnClick="Unnamed1_Click" style="background:#275c9a"/>
       <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
     </form>
   </body>
