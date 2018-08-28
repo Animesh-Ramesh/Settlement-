@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Custodian.aspx.cs" Inherits="Project.WebForm2" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ObligationReport_A.aspx.cs" Inherits="Project.ObligationReport_A" %>
 
 <!DOCTYPE html>
 
@@ -32,8 +32,10 @@
 </head>
 <body id="page-top" class="index">
 
+    <form id="form1" runat="server">
+
     <!-- Navigation -->
-    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top" style="background-color:#333">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
@@ -53,10 +55,10 @@
                         <asp:HyperLink ID="hyperlink2" Cssclass="page-scroll" NavigateUrl="TradeList" Text="Trade List" runat="server" /> 
                     </li>
                     <li>
-                        <asp:HyperLink ID="hyperlink3" Cssclass="page-scroll" NavigateUrl="ObligationReport" Text="Obligation Report" runat="server" />
+                        <asp:HyperLink ID="hyperlink3" Cssclass="page-scroll" NavigateUrl="#" Text="Obligation Report" runat="server" />
                     </li>
                     <li>
-                        <asp:HyperLink ID="hyperlink4" Cssclass="page-scroll" NavigateUrl="Shortage_C" Text="Shortages" runat="server" />
+                        <asp:HyperLink ID="hyperlink4" Cssclass="page-scroll" NavigateUrl="#" Text="Shortages" runat="server" />
                     </li>
                     <li>
                         <asp:HyperLink ID="hyperlink5" Cssclass="page-scroll" NavigateUrl="#" Text="Notification" runat="server" />
@@ -72,24 +74,80 @@
     </nav>
 
     <!-- Header -->
-    <header>
-        <div class="container">
+       <%-- <header>
+            <div class="container">
             <div class="intro-text">
-                <div class="intro-lead-in">Welcome To Our Studio!</div>
+               <div class="intro-lead-in">Welcome To Our Studio!</div>
                 <div class="intro-heading">It's Nice To Meet You</div>
-                <a href="#services" class="page-scroll btn btn-xl"><% Response.Write((string)(Session["CName"]));%></a>
+                <a href="#services" class="page-scroll btn btn-xl">Tell Me More</a>
             </div>
-        </div>
-    </header>
+        </div>--%>
+        
+             <!-- Services -->
+    <section id="services">
+      <div class="container">
+        
+            <div class="table-responsive" >
+                
+                Security Obligations               
+                <asp:GridView ID="GridView1" CssClass="table table-striped" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" DataSourceID="ObligationReport_ds_A" ForeColor="Black">
+                    <Columns>
+                        <asp:BoundField DataField="CustodianName" HeaderText="CustodianName" SortExpression="CustodianName" />
+                        <asp:BoundField DataField="SecurityName" HeaderText="SecurityName" SortExpression="SecurityName" />
+                        <asp:BoundField DataField="NetSettle" HeaderText="NetSettle" SortExpression="NetSettle" />
+                    </Columns>
+                    <FooterStyle BackColor="#CCCCCC" />
+                    <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
+                    <RowStyle BackColor="White" />
+                    <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                    <SortedAscendingHeaderStyle BackColor="#808080" />
+                    <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                    <SortedDescendingHeaderStyle BackColor="#383838" />
+                </asp:GridView>
+                <asp:SqlDataSource ID="ObligationReport_ds_A" runat="server" ConnectionString="<%$ ConnectionStrings:CNS_SYSTEMConnectionString %>" SelectCommand="SELECT [CustodianName], [SecurityName], [NetSettle] FROM [SecurityObligationRepo]"></asp:SqlDataSource>
+            </div>
+        
+        
+      </div>
+        <div class="container">
 
+            
+        
+            <div class="table-responsive" >
+                
+                Funds Obligations
+                
+                <asp:GridView ID="GridView2" CssClass="table table-striped" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" DataSourceID="ObligationReport_ds_A_funds" ForeColor="Black">
+                    <Columns>
+                        <asp:BoundField DataField="CustodianName" HeaderText="CustodianName" SortExpression="CustodianName" />
+                        <asp:BoundField DataField="FundsNetSettle" HeaderText="FundsNetSettle" SortExpression="FundsNetSettle" />
+                    </Columns>
+                    <FooterStyle BackColor="#CCCCCC" />
+                    <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
+                    <RowStyle BackColor="White" />
+                    <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                    <SortedAscendingHeaderStyle BackColor="#808080" />
+                    <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                    <SortedDescendingHeaderStyle BackColor="#383838" />
+                </asp:GridView>
+                <asp:SqlDataSource ID="ObligationReport_ds_A_funds" runat="server" ConnectionString="<%$ ConnectionStrings:CNS_SYSTEMConnectionString %>" SelectCommand="SELECT [CustodianName], [FundsNetSettle] FROM [FundObligationRepo]"></asp:SqlDataSource>
+                
+                </div>
+            </div>
+    </section>
+            
 
+        
 
     <footer>
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; Your Website 2016</span>
-                </div>
+                    <span class="copyright">Copyright &copy; Your Website 2016 ></span>          </div>
                 <div class="col-md-4">
                     <ul class="list-inline social-buttons">
                         <li><a href="#"><i class="fa fa-twitter"></i></a>
@@ -127,8 +185,6 @@
 
     <!-- Theme JavaScript -->
     <script src="Scripts/agency.min.js"></script>
+    </form>
 </body>
 </html>
-
-    
-

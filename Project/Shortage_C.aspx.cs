@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Project
 {
-    public partial class About : Page
+    public partial class Shortage_C : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -40,7 +40,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <asp:HyperLink ID="hyperlink1" CssClass="navbar-brand page-scroll" NavigateUrl="#" Text="Start Bootstrap" runat="server" /> 
+                <asp:HyperLink ID="hyperlink1_a" CssClass="navbar-brand page-scroll" NavigateUrl="#" Text="Start Bootstrap" runat="server" /> 
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -50,13 +50,13 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                       <asp:HyperLink ID="hyperlink2_a" CssClass="page-scroll" NavigateUrl="#" Text="All Trades" runat="server" /> 
+                       <asp:HyperLink ID="hyperlink2_a" CssClass="page-scroll" NavigateUrl="AllTrades" Text="All Trades" runat="server" /> 
                     </li>
                     <li>
-                        <asp:HyperLink ID="hyperlink3_a" CssClass="page-scroll" NavigateUrl="#" Text="Obligation Report" runat="server" />
+                        <asp:HyperLink ID="hyperlink3_a" CssClass="page-scroll" NavigateUrl="ObligationReport_A" Text="Obligation Report" runat="server" />
                     </li>
                     <li>
-                        <asp:HyperLink ID="hyperlink4_a" CssClass="page-scroll" NavigateUrl="#" Text="Shortages" runat="server" />
+                        <asp:HyperLink ID="hyperlink4_a" CssClass="page-scroll" NavigateUrl="Shortage_A" Text="Shortages" runat="server" />
                     </li>
                     <li>
                         <asp:HyperLink ID="hyperlink5_a" CssClass="page-scroll" NavigateUrl="#" Text="Statistics" runat="server" />

@@ -7,29 +7,49 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Project {
-    
-    
-    public partial class WebForm1 {
-        
+namespace Project
+{
+
+
+    public partial class WebForm1
+    {
+
         /// <summary>
-        /// inputEmail control.
+        /// txtUserName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList inputEmail;
-        
+        protected global::System.Web.UI.WebControls.DropDownList txtUserName;
+
         /// <summary>
-        /// inputPassword control.
+        /// SqlDataSource1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inputPassword;
-        
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+
+        /// <summary>
+        /// RequiredFieldValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+
+        /// <summary>
+        /// txtPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPassword;
+
         /// <summary>
         /// CheckBox1 control.
         /// </summary>

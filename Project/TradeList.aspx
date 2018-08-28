@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Custodian.aspx.cs" Inherits="Project.WebForm2" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TradeList.aspx.cs" Inherits="Project.TradeList" %>
 
 <!DOCTYPE html>
 
@@ -32,8 +32,10 @@
 </head>
 <body id="page-top" class="index">
 
+    <form id="form1" runat="server">
+
     <!-- Navigation -->
-    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top" style="background-color:#333">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
@@ -53,10 +55,10 @@
                         <asp:HyperLink ID="hyperlink2" Cssclass="page-scroll" NavigateUrl="TradeList" Text="Trade List" runat="server" /> 
                     </li>
                     <li>
-                        <asp:HyperLink ID="hyperlink3" Cssclass="page-scroll" NavigateUrl="ObligationReport" Text="Obligation Report" runat="server" />
+                        <asp:HyperLink ID="hyperlink3" Cssclass="page-scroll" NavigateUrl="#" Text="Obligation Report" runat="server" />
                     </li>
                     <li>
-                        <asp:HyperLink ID="hyperlink4" Cssclass="page-scroll" NavigateUrl="Shortage_C" Text="Shortages" runat="server" />
+                        <asp:HyperLink ID="hyperlink4" Cssclass="page-scroll" NavigateUrl="#" Text="Shortages" runat="server" />
                     </li>
                     <li>
                         <asp:HyperLink ID="hyperlink5" Cssclass="page-scroll" NavigateUrl="#" Text="Notification" runat="server" />
@@ -72,17 +74,54 @@
     </nav>
 
     <!-- Header -->
-    <header>
-        <div class="container">
+       <%-- <header>
+            <div class="container">
             <div class="intro-text">
-                <div class="intro-lead-in">Welcome To Our Studio!</div>
+               <div class="intro-lead-in">Welcome To Our Studio!</div>
                 <div class="intro-heading">It's Nice To Meet You</div>
-                <a href="#services" class="page-scroll btn btn-xl"><% Response.Write((string)(Session["CName"]));%></a>
+                <a href="#services" class="page-scroll btn btn-xl">Tell Me More</a>
             </div>
-        </div>
-    </header>
+        </div>--%>
+        
+             <!-- Services -->
+    <section id="services">
+      <div class="container">
+        
+          <div class="table-responsive" >
+            <asp:GridView ID="GridView1" CssClass="table table-striped" runat="server" AutoGenerateColumns="False" DataSourceID="TradeList_ds" AllowPaging="True" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black">
+                <Columns>
+                    <asp:BoundField DataField="TradeId" HeaderText="TradeId" SortExpression="TradeId" />
+                    <asp:BoundField DataField="SecurityName" HeaderText="SecurityName" SortExpression="SecurityName" />
+                    <asp:BoundField DataField="Quantity" HeaderText="Quantity" SortExpression="Quantity" />
+                    <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
+                    <asp:BoundField DataField="BuyingMemberName" HeaderText="BuyingMemberName" SortExpression="BuyingMemberName" />
+                    <asp:BoundField DataField="SellingMemberName" HeaderText="SellingMemberName" SortExpression="SellingMemberName" />
+                </Columns>
+                <FooterStyle BackColor="#CCCCCC" />
+                <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
+                <RowStyle BackColor="White" />
+                <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+                <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                <SortedAscendingHeaderStyle BackColor="#808080" />
+                <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                <SortedDescendingHeaderStyle BackColor="#383838" />
+            </asp:GridView>
+          
+            <asp:SqlDataSource ID="TradeList_ds" runat="server" ConnectionString="<%$ ConnectionStrings:CNS_SYSTEMConnectionString %>" SelectCommand="Select * From TradeListDynamic Where (BuyingMemberName= @user OR SellingMemberName=@user)" >
+          <SelectParameters>
+              <asp:SessionParameter Name ="user" SessionField ="CName" ConvertEmptyStringToNull ="True" />
+          </SelectParameters>
+                </asp:SqlDataSource>
+        
+          </div>
+            </div>
+        
+        
+    </section>
+            
 
-
+        
 
     <footer>
         <div class="container">
@@ -127,8 +166,6 @@
 
     <!-- Theme JavaScript -->
     <script src="Scripts/agency.min.js"></script>
+    </form>
 </body>
 </html>
-
-    
-
