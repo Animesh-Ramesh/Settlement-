@@ -24,9 +24,9 @@ namespace Project
 
         protected void TruncateTableBtn_Click(object sender, EventArgs e)
         {
-            using (SqlConnection conn = new SqlConnection())
+            using (SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CNS_SYSTEMConnectionString"].ConnectionString))
             {
-                conn.ConnectionString = @"Data Source=GRAD135-HP;Initial Catalog=CNS_SYSTEM;Integrated Security=True";
+                //conn.ConnectionString = "<%$ ConnectionStrings:CNS_SYSTEMConnectionString %>";
                 conn.Open();
 
                 string sql = $"TRUNCATE table TradeListDynamic";
@@ -43,9 +43,9 @@ namespace Project
 
         protected void GenRandom_Click(object sender, EventArgs e)
         {
-            using (SqlConnection conn = new SqlConnection())
+            using (SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CNS_SYSTEMConnectionString"].ConnectionString))
             {
-                conn.ConnectionString = @"Data Source=GRAD135-HP;Initial Catalog=CNS_SYSTEM;Integrated Security=True";
+                //conn.ConnectionString = "<%$ ConnectionStrings:CNS_SYSTEMConnectionString %>";
                 conn.Open();
 
                 string sql = @"update Flags set random=1 where Pkey=1";
@@ -71,9 +71,9 @@ namespace Project
     
         protected void SettleBtn_Click(object sender, EventArgs e)
         {
-            using (SqlConnection conn = new SqlConnection())
+            using (SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CNS_SYSTEMConnectionString"].ConnectionString))
             {
-                conn.ConnectionString = @"Data Source=GRAD135-HP;Initial Catalog=CNS_SYSTEM;Integrated Security=True";
+                //conn.ConnectionString = "<%$ ConnectionStrings:CNS_SYSTEMConnectionString %>";
                 conn.Open();
 
                 string sql = @"update Flags set settlement=1 where Pkey=1";

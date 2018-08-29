@@ -19,9 +19,9 @@ namespace Project
         protected void AddTrade_Click(object sender, EventArgs e)
         {
 
-            using (SqlConnection conn = new SqlConnection())
+            using (SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CNS_SYSTEMConnectionString"].ConnectionString))
             {
-                conn.ConnectionString = @"Data Source=GRAD135-HP;Initial Catalog=CNS_SYSTEM;Integrated Security=True";
+                //conn.ConnectionString = "<%$ ConnectionStrings:CNS_SYSTEMConnectionString %>";
                 conn.Open();
 
                 int Tradecount = 0;

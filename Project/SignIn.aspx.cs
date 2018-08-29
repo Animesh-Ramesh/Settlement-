@@ -13,8 +13,8 @@ namespace Project
     public partial class WebForm1 : System.Web.UI.Page
     {
         
-        static String connstring = @"Data Source=GRAD135-HP;Initial Catalog=CNS_SYSTEM;Integrated Security=True";
-        SqlConnection connection = new SqlConnection(connstring);
+        
+        SqlConnection connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CNS_SYSTEMConnectionString"].ConnectionString);
         String C_Name;
         byte[] salt = new byte[128 / 8] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         
