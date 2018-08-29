@@ -62,7 +62,7 @@
                         <asp:HyperLink ID="hyperlink5" Cssclass="page-scroll" NavigateUrl="BorrowingRates" Text="Borrowing Rates" runat="server" />
                     </li>
                     <li>
-                         <asp:HyperLink ID="hyperlink6" Cssclass="page-scroll" NavigateUrl="SignIn" Text="Sign Out" runat="server" />
+                         <a href="SignIn" class="page-scroll" >Sign Out, <%Response.Write((string)(Session["CName"]));%></a>
                     </li>
                 </ul>
             </div>

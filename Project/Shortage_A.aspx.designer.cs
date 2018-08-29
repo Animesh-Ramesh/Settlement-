@@ -67,15 +67,6 @@ namespace Project {
         protected global::System.Web.UI.WebControls.HyperLink hyperlink5_a;
         
         /// <summary>
-        /// hyperlink6_a control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hyperlink6_a;
-        
-        /// <summary>
         /// GridView1 control.
         /// </summary>
         /// <remarks>

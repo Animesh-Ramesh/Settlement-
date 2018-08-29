@@ -69,7 +69,7 @@
                         <asp:HyperLink ID="hyperlink5_a" CssClass="page-scroll" NavigateUrl="Statistics" Text="Statistics" runat="server" />
                     </li>
                     <li>
-                         <asp:HyperLink ID="hyperlink6_a" CssClass="page-scroll" NavigateUrl="SignIn" Text="Sign Out" runat="server" />
+                         <a href="SignIn" class="page-scroll" >Sign Out, <%Response.Write((string)(Session["CName"]));%></a>
                     </li>
                 </ul>
             </div>
@@ -92,8 +92,11 @@
     <section id="services">
  
    
-        <div id="myChartDiv">  
-            <asp:Chart CssClass="center-block" ID="Chart1" runat="server" DataSourceID="TradesPerSecurity" Height="541px" Width="478px">
+        <div id="myChartDiv"> 
+            <div class="caption">
+                <div class="text-center"> <label ID="figure1" runat="server"  > Securities Traded Today</label></div></div>
+        </div> 
+            <asp:Chart CssClass="center-block" ID="Chart1" runat="server" DataSourceID="TradesPerSecurity" Height="496px" Width="426px">
                 <series>
                     <asp:Series ChartType="Pie" Name="Series1" XValueMember="SecurityName" YValueMembers="TotalQuantity"  >
                     </asp:Series>
@@ -111,7 +114,7 @@
                 </chartareas>
             </asp:Chart>
             <asp:SqlDataSource ID="TradesPerSecurity" runat="server" ConnectionString="<%$ ConnectionStrings:CNS_SYSTEMConnectionString %>" SelectCommand="SELECT SecurityName, SUM(Quantity) AS TotalQuantity FROM TradeListDynamic GROUP BY SecurityName"></asp:SqlDataSource>
-        </div>  
+            
  
     </section>
             

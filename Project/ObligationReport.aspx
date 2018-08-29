@@ -64,7 +64,7 @@
                         <asp:HyperLink ID="hyperlink5" Cssclass="page-scroll" NavigateUrl="BorrowingRates" Text="Borrowing Rates" runat="server" />
                     </li>
                     <li>
-                         <asp:HyperLink ID="hyperlink6" Cssclass="page-scroll" NavigateUrl="SignIn" Text="Sign Out" runat="server" />
+                         <a href="SignIn" class="page-scroll" >Sign Out, <%Response.Write((string)(Session["CName"]));%></a>
                     </li>
                 </ul>
             </div>
@@ -91,9 +91,9 @@
                 
                 Security Obligations<asp:GridView ID="GridView1" CssClass="table table-striped" runat="server" AutoGenerateColumns="False" DataSourceID="ObligationReport_ds_C" AllowPaging="True" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black">
                     <Columns>
-                        <asp:BoundField DataField="CustodianName" HeaderText="CustodianName" SortExpression="CustodianName" />
-                        <asp:BoundField DataField="SecurityName" HeaderText="SecurityName" SortExpression="SecurityName" />
-                        <asp:BoundField DataField="NetSettle" HeaderText="NetSettle" SortExpression="NetSettle" />
+                        <asp:BoundField DataField="CustodianName" HeaderText="Custodian Name" SortExpression="CustodianName" />
+                        <asp:BoundField DataField="SecurityName" HeaderText="Security Name" SortExpression="SecurityName" />
+                        <asp:BoundField DataField="NetSettle" HeaderText="Net Settle($)" SortExpression="NetSettle" />
                     </Columns>
                     <FooterStyle BackColor="#CCCCCC" />
                     <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
@@ -105,7 +105,7 @@
                     <SortedDescendingCellStyle BackColor="#CAC9C9" />
                     <SortedDescendingHeaderStyle BackColor="#383838" />
                 </asp:GridView>
-            <asp:SqlDataSource ID="ObligationReport_ds_C" runat="server" ConnectionString="<%$ ConnectionStrings:CNS_SYSTEMConnectionString %>" SelectCommand="SELECT CustodianName,SecurityName,NetSettle FROM SecurityObligationRepo Where CustodianName= @user" >
+            <asp:SqlDataSource ID="ObligationReport_ds_C" runat="server" ConnectionString="<%$ ConnectionStrings:CNS_SYSTEMConnectionString %>" SelectCommand="SELECT CustodianName,SecurityName,NetSettle FROM SecurityObligationRepo Where CustodianName= @user order by CustodianName" >
           <SelectParameters>
               <asp:SessionParameter Name ="user" SessionField ="CName" ConvertEmptyStringToNull ="True" />
           </SelectParameters>

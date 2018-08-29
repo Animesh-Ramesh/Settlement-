@@ -65,7 +65,7 @@
                         <asp:HyperLink ID="hyperlink5_a" CssClass="page-scroll" NavigateUrl="Statistics" Text="Statistics" runat="server" />
                     </li>
                     <li>
-                         <asp:HyperLink ID="hyperlink6_a" CssClass="page-scroll" NavigateUrl="SignIn" Text="Sign Out" runat="server" />
+                         <a href="SignIn" class="page-scroll" >Sign Out, <%Response.Write((string)(Session["CName"]));%></a>
                     </li>
                 </ul>
             </div>
@@ -91,12 +91,11 @@
             <div class="table-responsive" >
                 <asp:GridView ID="GridView1" CssClass="table table-striped" runat="server" AutoGenerateColumns="False" DataKeyNames="TradeId" DataSourceID="SqlDataSource2" AllowPaging="True" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" AllowSorting="True">
                     <Columns>
-                        <asp:BoundField DataField="TradeId" HeaderText="TradeId" ReadOnly="True" SortExpression="TradeId" />
-                        <asp:BoundField DataField="SecurityName" HeaderText="SecurityName" SortExpression="SecurityName" />
+                        <asp:BoundField DataField="SecurityName" HeaderText="Security Name" SortExpression="SecurityName" />
                         <asp:BoundField DataField="Quantity" HeaderText="Quantity" SortExpression="Quantity" />
-                        <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
-                        <asp:BoundField DataField="BuyingMemberName" HeaderText="BuyingMemberName" SortExpression="BuyingMemberName" />
-                        <asp:BoundField DataField="SellingMemberName" HeaderText="SellingMemberName" SortExpression="SellingMemberName" />
+                        <asp:BoundField DataField="Price" HeaderText="Price($)" SortExpression="Price" />
+                        <asp:BoundField DataField="BuyingMemberName" HeaderText="Buying Member Name" SortExpression="BuyingMemberName" />
+                        <asp:BoundField DataField="SellingMemberName" HeaderText="Selling Member Name" SortExpression="SellingMemberName" />
                     </Columns>
                     <FooterStyle BackColor="#CCCCCC" />
                     <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
@@ -132,7 +131,7 @@
 
 
 
-        </div
+        </div>
        
     </section>
             

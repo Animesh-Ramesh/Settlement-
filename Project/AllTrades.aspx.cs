@@ -83,7 +83,7 @@ namespace Project
                 } while (flag.Equals(0));
             }
 
-            
+            Response.Redirect(Request.RawUrl);
         }
         
     
@@ -112,6 +112,7 @@ namespace Project
                     }
                 } while (flag.Equals(0));
             }
+            Response.Redirect("ObligationReport_A");
         }
 
         protected void GenSample_Click(object sender, EventArgs e)
@@ -121,13 +122,13 @@ namespace Project
                 //conn.ConnectionString = "<%$ ConnectionStrings:CNS_SYSTEMConnectionString %>";
                 conn.Open();
 
-                string sql = @"insert into tradelistdynamic from (select * ";
+                string sql = @"insert into tradelistdynamic select tradelist.* from tradelist";
                 using (SqlCommand command = new SqlCommand(sql, conn))
                 {
                     command.ExecuteNonQuery();
                 }
 
-                
+                Response.Redirect(Request.RawUrl);
             }
         }
     }

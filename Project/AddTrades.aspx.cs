@@ -12,48 +12,78 @@ namespace Project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //  temp();
-         //   String x = "chirag";
+            if (Session["CNAme"] == null)
+                Server.Transfer("SignIn.aspx", true);
         }
+
+    
 
         protected void AddTrade_Click(object sender, EventArgs e)
         {
-
-            using (SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CNS_SYSTEMConnectionString"].ConnectionString))
+            string y = BMemName.SelectedItem.Text;
+            string z= SMemName.SelectedItem.Text;
+            //Checking bmemname and smemname equality
+            if (BMemName.SelectedItem.Text.Equals(SMemName.SelectedItem.Text))
             {
-                //conn.ConnectionString = "<%$ ConnectionStrings:CNS_SYSTEMConnectionString %>";
-                conn.Open();
+                Response.Write("<script language=javascript>alert('Buying Member Name cannot be same as Selling Member Name.')</script>");
 
-                int Tradecount = 0;
-                string TradeCount;
-                string countsql = $"select count(TradeID) from TradeListDynamic";
-
-                SqlCommand commandcount = new SqlCommand(countsql, conn);
-
-                using (SqlDataReader dr = commandcount.ExecuteReader())
+               
+        }
+            else
+            {
+                using (SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CNS_SYSTEMConnectionString"].ConnectionString))
                 {
-                    if (dr.Read())
+                    //conn.ConnectionString = "<%$ ConnectionStrings:CNS_SYSTEMConnectionString %>";
+                    conn.Open();
+
+                    int Tradecount = 0;
+                    string TradeCount;
+                    string countsql = $"select count(TradeID) from TradeListDynamic";
+
+                    SqlCommand commandcount = new SqlCommand(countsql, conn);
+
+                    using (SqlDataReader dr = commandcount.ExecuteReader())
                     {
-                        Tradecount = dr.GetInt32(0);
+                        if (dr.Read())
+                        {
+                            Tradecount = dr.GetInt32(0);
+                        }
+
                     }
 
+                    Tradecount++;
+                    TradeCount = Tradecount.ToString();
+
+
+
+
+                    string sql = @"Insert into TradeListDynamic values ('" + Tradecount + "','" + SecName2.SelectedItem.Text + "'," + Int32.Parse(Qty.Text) + "," + Double.Parse(Price.Text) + ",'" + BMemName.SelectedItem.Text + "','" + SMemName.SelectedItem.Text + "')";
+                    using (SqlCommand command = new SqlCommand(sql, conn))
+                    {
+                        command.ExecuteNonQuery();
+                    }
                 }
 
-                Tradecount++;
-                TradeCount = Tradecount.ToString();
-
-
-                string sql = @"Insert into TradeListDynamic values ('" + Tradecount + "','" + SecurityName.Text + "'," + Int32.Parse(Qty.Text) + "," + Double.Parse(Price.Text) + ",'" + BMemName.SelectedItem.Text + "','" + SMemName.SelectedItem.Text + "')";
-                using (SqlCommand command = new SqlCommand(sql, conn))
-                {
-                    command.ExecuteNonQuery();
-                }
+                Response.Write("<script language=javascript>alert('Trade Added.')</script>");
+                SMemName.SelectedIndex = 0;
+                BMemName.SelectedIndex = 0;
+                SecName2.SelectedIndex = 0;
+                Qty.Text = "";
+                Price.Text = "";
+                //Response.Redirect(Request.RawUrl);
             }
         }
 
-     
-            //Response.Redirect(Request.RawUrl);
-        
+        protected void BMemName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+
+        //Response.Redirect(Request.RawUrl);
+
+
+
     }
 }
 

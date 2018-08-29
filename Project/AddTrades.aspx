@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AddTrades.aspx.cs" Inherits="Project.AddTrades" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddTrades.aspx.cs" Inherits="Project.AddTrades" %>
 
 <!DOCTYPE html>
 
@@ -28,6 +28,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
 
 </head>
 <body id="page-top" class="index">
@@ -64,8 +65,10 @@
                         <asp:HyperLink ID="hyperlink5_a" CssClass="page-scroll" NavigateUrl="Statistics" Text="Statistics" runat="server" />
                     </li>
                     <li>
-                         <asp:HyperLink ID="hyperlink6_a" CssClass="page-scroll" NavigateUrl="SignIn" Text="Sign Out" runat="server" />
+                        <a href="SignIn" class="page-scroll" >Sign Out, <%Response.Write((string)(Session["CName"]));%></a>                   
+
                     </li>
+                    
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -92,40 +95,46 @@
             
 
 	<div class="form-group"> <!-- Security Name -->
-		<label for="SecName" class="control-label">Security Name</label>
-		<asp:TextBox runat="server" Cssclass="form-control" id="SecurityName" name="SecName" />
+		<label for="SecName2" class="control-label">Security Name</label>
+        <asp:DropDownList ID="SecName2" class="form-control" runat="server" DataSourceID="SecurityNames" DataTextField="SecurityName" DataValueField="SecurityName"></asp:DropDownList>
+	    <asp:SqlDataSource ID="SecurityNames" runat="server" ConnectionString="<%$ ConnectionStrings:CNS_SYSTEMConnectionString %>" SelectCommand="SELECT [SecurityName] FROM [Security]"></asp:SqlDataSource>
 	</div>	
 
 	<div class="form-group"> <!-- Quantity -->
 		<label for="Qty" class="control-label">Quantity</label>
+        <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="Qty" ErrorMessage="* Must be positive" MinimumValue="0" Type="Integer" MaximumValue="2147483647" Font-Italic="True" ForeColor="Red"></asp:RangeValidator>
 		<asp:TextBox runat="server" Cssclass="form-control" id="Qty" name="Quantity" />
 	</div>					
 							
 	<div class="form-group"> <!-- Price -->
 		<label for="Price" class="control-label">Price</label>
+        <asp:RangeValidator ID="RangeValidator2" runat="server" ControlToValidate="Price" ErrorMessage="* Must be positive" MaximumValue="2147483647" MinimumValue="0" Type="Double" Font-Italic="True" ForeColor="Red"></asp:RangeValidator>
 		<asp:TextBox runat="server" CssClass="form-control" id="Price" name="Price" />
 	</div>	
 
 	<div class="form-group"> <!-- Buying Member Name-->
-		<label for="BMemName" Cssclass="control-label">Buying Member Name</label>
+		<label for="BMemName" class="control-label">Buying Member Name</label>
 		
-        <asp:DropDownList ID="BMemName" class="form-control" runat="server" DataSourceID="MemberName" DataTextField="CustodianName" DataValueField="CustodianName">
-            </asp:DropDownList>
+        <asp:DropDownList ID="BMemName" class="form-control" runat="server" DataSourceID="MemberName" DataTextField="CustodianName" DataValueField="CustodianName" OnSelectedIndexChanged="BMemName_SelectedIndexChanged"></asp:DropDownList>
 	    <asp:SqlDataSource ID="MemberName" runat="server" ConnectionString="<%$ ConnectionStrings:CNS_SYSTEMConnectionString %>" SelectCommand="SELECT [CustodianName] FROM [Custodian]"></asp:SqlDataSource>
 	</div>
 	
 	<div class="form-group"> <!-- Selling Member Name-->
 		<label for="SMemName" class="control-label">Selling Member Name</label>
 
-        <asp:DropDownList ID="SMemName" class="form-control" runat="server" DataSourceID="MemberName" DataTextField="CustodianName" DataValueField="CustodianName">
+        <asp:DropDownList ID="SMemName" class="form-control" runat="server" DataSourceID="MemberNameExclude" DataTextField="CustodianName" DataValueField="CustodianName">
         </asp:DropDownList>
+		
+
+
+	    <asp:SqlDataSource ID="MemberNameExclude" runat="server" ConnectionString="<%$ ConnectionStrings:CNS_SYSTEMConnectionString %>" SelectCommand="SELECT [CustodianName] FROM [Custodian]"></asp:SqlDataSource>
 		
 
 
 	</div>		
 	
 	<div class="form-group" style="text-align: center"> <!-- Submit Button -->
-        <asp:Button ID="addingtrade" class="btn btn-primary" runat="server" OnClick="AddTrade_Click" Text="Add Trade" />
+        <asp:Button ID="addingtrade" class="btn btn-primary" runat="server" OnClick="AddTrade_Click"   Text="Add Trade" />
 	</div>     
 	
     
@@ -135,6 +144,7 @@
             
 
         </form>
+    
 
     <footer>
         <div class="container">

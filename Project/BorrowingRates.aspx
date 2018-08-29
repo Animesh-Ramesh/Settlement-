@@ -64,7 +64,7 @@
                         <asp:HyperLink ID="hyperlink5" Cssclass="page-scroll" NavigateUrl="BorrowingRates" Text="Borrowing Rates" runat="server" />
                     </li>
                     <li>
-                         <asp:HyperLink ID="hyperlink6" Cssclass="page-scroll" NavigateUrl="SignIn" Text="Sign Out" runat="server" />
+                         <a href="SignIn" class="page-scroll" >Sign Out, <%Response.Write((string)(Session["CName"]));%></a>
                     </li>
                 </ul>
             </div>
@@ -94,8 +94,8 @@
                 <asp:GridView ID="GridView1" CssClass="table table-striped" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" DataKeyNames="SecurityName" DataSourceID="SecurityBorrowingRates_C" ForeColor="Black">
                     <Columns>
                         <asp:BoundField DataField="SecurityName" HeaderText="Security Name" ReadOnly="True" SortExpression="SecurityName" />
-                        <asp:BoundField DataField="MarketPrice" HeaderText="MarketPrice" SortExpression="MarketPrice" />
-                        <asp:BoundField DataField="BorrowingRate" HeaderText="BorrowingRate" SortExpression="BorrowingRate" />
+                        <asp:BoundField DataField="MarketPrice" HeaderText="Market Price($)" SortExpression="MarketPrice" />
+                        <asp:BoundField DataField="BorrowingRate" HeaderText="Borrowing Rate(%)" SortExpression="BorrowingRate" />
                     </Columns>
                     <FooterStyle BackColor="#CCCCCC" />
                     <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
