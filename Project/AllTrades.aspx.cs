@@ -113,5 +113,22 @@ namespace Project
                 } while (flag.Equals(0));
             }
         }
+
+        protected void GenSample_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection conn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CNS_SYSTEMConnectionString"].ConnectionString))
+            {
+                //conn.ConnectionString = "<%$ ConnectionStrings:CNS_SYSTEMConnectionString %>";
+                conn.Open();
+
+                string sql = @"insert into tradelistdynamic from (select * ";
+                using (SqlCommand command = new SqlCommand(sql, conn))
+                {
+                    command.ExecuteNonQuery();
+                }
+
+                
+            }
+        }
     }
 }

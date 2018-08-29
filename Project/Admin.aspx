@@ -77,7 +77,7 @@
             <div class="intro-text">
                 <div class="intro-lead-in">Welcome!</div>
                 <div class="intro-heading" >Nice To Meet You, <%Response.Write((string)(Session["CName"]));%></div>
-                <a href="#" class="page-scroll btn btn-xl">View Profile></a>
+                <a href="#" class="page-scroll btn btn-xl">View Profile</a>
             </div>
         </div>
     </header>
