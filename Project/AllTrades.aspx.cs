@@ -43,12 +43,57 @@ namespace Project
 
         protected void GenRandom_Click(object sender, EventArgs e)
         {
+            using (SqlConnection conn = new SqlConnection())
+            {
+                conn.ConnectionString = @"Data Source=GRAD135-HP;Initial Catalog=CNS_SYSTEM;Integrated Security=True";
+                conn.Open();
 
+                string sql = @"update Flags set random=1 where Pkey=1";
+                using (SqlCommand command = new SqlCommand(sql, conn))
+                {
+                    command.ExecuteNonQuery();
+                }
+                int flag = 0;
+
+                string sqlcheck = @"update Flags set random=0 where random=100";
+                do
+                {
+                    using (SqlCommand command = new SqlCommand(sqlcheck, conn))
+                    {
+                        flag = command.ExecuteNonQuery();
+                    }
+                } while (flag.Equals(0));
+            }
+
+            
         }
-
-        protected void LinkButton1_Click(object sender, EventArgs e)
+        
+    
+        protected void SettleBtn_Click(object sender, EventArgs e)
         {
+            using (SqlConnection conn = new SqlConnection())
+            {
+                conn.ConnectionString = @"Data Source=GRAD135-HP;Initial Catalog=CNS_SYSTEM;Integrated Security=True";
+                conn.Open();
 
+                string sql = @"update Flags set settlement=1 where Pkey=1";
+                using (SqlCommand command = new SqlCommand(sql, conn))
+                {
+                    command.ExecuteNonQuery();
+                }
+
+
+                int flag = 0;
+
+                string sqlcheck = @"update Flags set settlement=0 where settlement=100";
+                do
+                {
+                    using (SqlCommand command = new SqlCommand(sqlcheck, conn))
+                    {
+                        flag = command.ExecuteNonQuery();
+                    }
+                } while (flag.Equals(0));
+            }
         }
     }
 }

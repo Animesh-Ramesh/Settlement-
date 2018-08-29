@@ -122,7 +122,11 @@
             
             <asp:Button ID="GenRandom" class="btn btn-primary" runat="server" Text="Generate Random Trades" style="margin:5px" OnClick="GenRandom_Click"/>
             
-            <asp:Button ID="TruncateTableBtn" class="btn btn-primary" runat="server" OnClick="TruncateTableBtn_Click" Text="Truncate Table" />
+            <asp:Button ID="TruncateTableBtn" class="btn btn-primary" runat="server" style="margin:5px" OnClick="TruncateTableBtn_Click" Text="Truncate Table" />
+
+            <asp:Button ID="SettleBtn" class="btn btn-primary" runat="server" Text="Settle" OnClick="SettleBtn_Click" />
+
+
 
 
         </div

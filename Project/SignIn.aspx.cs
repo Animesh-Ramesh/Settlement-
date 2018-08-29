@@ -12,6 +12,7 @@ namespace Project
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
+        
         static String connstring = @"Data Source=GRAD135-HP;Initial Catalog=CNS_SYSTEM;Integrated Security=True";
         SqlConnection connection = new SqlConnection(connstring);
         String C_Name;
@@ -20,6 +21,7 @@ namespace Project
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Response.Redirect(Request.RawUrl);
             // Session.Abandon();
             //Session["CName"] = null;
             //Response.Cache.SetCacheability(HttpCacheability.NoCache);

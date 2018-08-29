@@ -142,6 +142,9 @@
                 </asp:SqlDataSource>
                 
                 </div>
+            <div style="text-align: center">
+                <asp:Button ID="ExportToPDF" class="btn btn-primary" runat="server" Text="Download as PDF" OnClick="ExportToPDF_Click"  />
+            </div>
             </div>
     </section>
             
@@ -152,7 +155,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; Your Website 2016 ></span>          </div>
+                    <span class="copyright">Copyright &copy; Your Website 2016 </span>          </div>
                 <div class="col-md-4">
                     <ul class="list-inline social-buttons">
                         <li><a href="#"><i class="fa fa-twitter"></i></a>
