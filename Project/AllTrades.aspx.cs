@@ -36,6 +36,24 @@ namespace Project
                     command.ExecuteNonQuery();
                 }
 
+                //changing truncated flag 
+                string sqltrunc = @"update Flags set truncated=1 where Pkey=1";
+                using (SqlCommand command = new SqlCommand(sqltrunc, conn))
+                {
+                    command.ExecuteNonQuery();
+                }
+
+                int flag = 0;
+
+                string sqlcheck = @"update Flags set truncated=0 where truncated=100";
+                do
+                {
+                    using (SqlCommand command = new SqlCommand(sqlcheck, conn))
+                    {
+                        flag = command.ExecuteNonQuery();
+                    }
+                } while (flag.Equals(0));
+
             }
 
             Response.Redirect(Request.RawUrl);

@@ -10,7 +10,7 @@
     <meta name="description" content=""/>
     <meta name="author" content=""/>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
-    <title>Custodian</title>
+    <title>Admin : Add Trades</title>
     <!-- Custom Fonts -->
     
     <link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css"/>
@@ -42,7 +42,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <asp:HyperLink ID="hyperlink1" Cssclass="navbar-brand page-scroll" NavigateUrl="#" Text="Start Bootstrap" runat="server" /> 
+                <asp:HyperLink ID="hyperlink1" Cssclass="navbar-brand page-scroll" NavigateUrl="Admin.aspx" Text="Coffee Crew" runat="server" /> 
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -140,9 +140,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; Your Website 2016</span>
+                    <span class="copyright">Copyright &copy; Coffee Crew 2018</span>
                 </div>
-                <div class="col-md-4">
+                <%--<div class="col-md-4">
                     <ul class="list-inline social-buttons">
                         <li><a href="#"><i class="fa fa-twitter"></i></a>
                         </li>
@@ -151,7 +151,7 @@
                         <li><a href="#"><i class="fa fa-linkedin"></i></a>
                         </li>
                     </ul>
-                </div>
+                </div>--%>
                 <div class="col-md-4">
                     <ul class="list-inline quicklinks">
                         <li><a href="#">Privacy Policy</a>

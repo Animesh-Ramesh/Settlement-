@@ -10,7 +10,7 @@
     <meta name="description" content=""/>
     <meta name="author" content=""/>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
-    <title>Custodian Trade List</title>
+    <title>Custodian : Trade List</title>
     <!-- Custom Fonts -->
     
     <link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css"/>
@@ -42,7 +42,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <asp:HyperLink ID="hyperlink1" Cssclass="navbar-brand page-scroll" NavigateUrl="Custodian" Text="Coffee Crew" runat="server" /> 
+                <asp:HyperLink ID="hyperlink1" Cssclass="navbar-brand page-scroll" NavigateUrl="Custodian.aspx" Text="Coffee Crew" runat="server" /> 
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -99,7 +99,7 @@
                 </Columns>
                 <FooterStyle BackColor="#CCCCCC" />
                 <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
+                <PagerStyle CssClass="cssPager" BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
                 <RowStyle BackColor="White" />
                 <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
                 <SortedAscendingCellStyle BackColor="#F1F1F1" />

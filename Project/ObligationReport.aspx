@@ -10,7 +10,7 @@
     <meta name="description" content=""/>
     <meta name="author" content=""/>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
-    <title>Custodian</title>
+    <title>Custodian : Obligation Report</title>
     <!-- Custom Fonts -->
     
     <link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css"/>
@@ -42,7 +42,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <asp:HyperLink ID="hyperlink1" Cssclass="navbar-brand page-scroll" NavigateUrl="#" Text="Start Bootstrap" runat="server" /> 
+                <asp:HyperLink ID="hyperlink1" Cssclass="navbar-brand page-scroll" NavigateUrl="Custodian.aspx" Text="Coffee Crew" runat="server" /> 
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -97,7 +97,7 @@
                     </Columns>
                     <FooterStyle BackColor="#CCCCCC" />
                     <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
-                    <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
+                    <PagerStyle CssClass="cssPager" BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Center" />
                     <RowStyle BackColor="White" />
                     <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
                     <SortedAscendingCellStyle BackColor="#F1F1F1" />
@@ -127,7 +127,7 @@
                     </Columns>
                     <FooterStyle BackColor="#CCCCCC" />
                     <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
-                    <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
+                    <PagerStyle CssClass="cssPager" BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
                     <RowStyle BackColor="White" />
                     <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
                     <SortedAscendingCellStyle BackColor="#F1F1F1" />
@@ -155,8 +155,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; Your Website 2016 </span>          </div>
-                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; Coffee Crew 2018 </span>          </div>
+                <%--<div class="col-md-4">
                     <ul class="list-inline social-buttons">
                         <li><a href="#"><i class="fa fa-twitter"></i></a>
                         </li>
@@ -165,7 +165,7 @@
                         <li><a href="#"><i class="fa fa-linkedin"></i></a>
                         </li>
                     </ul>
-                </div>
+                </div>--%>
                 <div class="col-md-4">
                     <ul class="list-inline quicklinks">
                         <li><a href="#">Privacy Policy</a>
