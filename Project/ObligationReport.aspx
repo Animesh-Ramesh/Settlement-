@@ -55,16 +55,16 @@
                         <asp:HyperLink ID="hyperlink2" Cssclass="page-scroll" NavigateUrl="TradeList" Text="Trade List" runat="server" /> 
                     </li>
                     <li>
-                        <asp:HyperLink ID="hyperlink3" Cssclass="page-scroll" NavigateUrl="#" Text="Obligation Report" runat="server" />
+                        <asp:HyperLink ID="hyperlink3" Cssclass="page-scroll" NavigateUrl="ObligationReport" Text="Obligation Report" runat="server" />
                     </li>
                     <li>
-                        <asp:HyperLink ID="hyperlink4" Cssclass="page-scroll" NavigateUrl="#" Text="Shortages" runat="server" />
+                        <asp:HyperLink ID="hyperlink4" Cssclass="page-scroll" NavigateUrl="Shortage_C" Text="Shortages" runat="server" />
                     </li>
                     <li>
-                        <asp:HyperLink ID="hyperlink5" Cssclass="page-scroll" NavigateUrl="#" Text="Notification" runat="server" />
+                        <asp:HyperLink ID="hyperlink5" Cssclass="page-scroll" NavigateUrl="BorrowingRates" Text="Borrowing Rates" runat="server" />
                     </li>
                     <li>
-                         <asp:HyperLink ID="hyperlink6" Cssclass="page-scroll" NavigateUrl="#" Text="Sign Out" runat="server" />
+                         <asp:HyperLink ID="hyperlink6" Cssclass="page-scroll" NavigateUrl="SignIn" Text="Sign Out" runat="server" />
                     </li>
                 </ul>
             </div>

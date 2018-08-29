@@ -10,7 +10,7 @@
 namespace Project {
     
     
-    public partial class WebForm4 {
+    public partial class Statistics {
         
         /// <summary>
         /// form1 control.
@@ -76,48 +76,21 @@ namespace Project {
         protected global::System.Web.UI.WebControls.HyperLink hyperlink6_a;
         
         /// <summary>
-        /// GridView1 control.
+        /// Chart1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.DataVisualization.Charting.Chart Chart1;
         
         /// <summary>
-        /// SqlDataSource2 control.
+        /// TradesPerSecurity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
-        
-        /// <summary>
-        /// AddTradesBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AddTradesBtn;
-        
-        /// <summary>
-        /// GenRandom control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button GenRandom;
-        
-        /// <summary>
-        /// TruncateTableBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button TruncateTableBtn;
+        protected global::System.Web.UI.WebControls.SqlDataSource TradesPerSecurity;
     }
 }

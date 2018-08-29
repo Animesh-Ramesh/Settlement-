@@ -52,19 +52,19 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <asp:HyperLink ID="hyperlink2" Cssclass="page-scroll" NavigateUrl="TradeList" Text="Trade List" runat="server" /> 
+                       <asp:HyperLink ID="hyperlink2_a" CssClass="page-scroll" NavigateUrl="AllTrades" Text="All Trades" runat="server" /> 
                     </li>
                     <li>
-                        <asp:HyperLink ID="hyperlink3" Cssclass="page-scroll" NavigateUrl="#" Text="Obligation Report" runat="server" />
+                        <asp:HyperLink ID="hyperlink3_a" CssClass="page-scroll" NavigateUrl="ObligationReport_A" Text="Obligation Report" runat="server" />
                     </li>
                     <li>
-                        <asp:HyperLink ID="hyperlink4" Cssclass="page-scroll" NavigateUrl="#" Text="Shortages" runat="server" />
+                        <asp:HyperLink ID="hyperlink4_a" CssClass="page-scroll" NavigateUrl="Shortage_A" Text="Shortages" runat="server" />
                     </li>
                     <li>
-                        <asp:HyperLink ID="hyperlink5" Cssclass="page-scroll" NavigateUrl="#" Text="Notification" runat="server" />
+                        <asp:HyperLink ID="hyperlink5_a" CssClass="page-scroll" NavigateUrl="Statistics" Text="Statistics" runat="server" />
                     </li>
                     <li>
-                         <asp:HyperLink ID="hyperlink6" Cssclass="page-scroll" NavigateUrl="#" Text="Sign Out" runat="server" />
+                         <asp:HyperLink ID="hyperlink6_a" CssClass="page-scroll" NavigateUrl="SignIn" Text="Sign Out" runat="server" />
                     </li>
                 </ul>
             </div>
@@ -88,7 +88,7 @@
       <div class="container">
         
             <div class="table-responsive" >
-                <asp:GridView ID="GridView1" CssClass="table table-striped" runat="server" AutoGenerateColumns="False" DataKeyNames="TradeId" DataSourceID="SqlDataSource2" AllowPaging="True" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black">
+                <asp:GridView ID="GridView1" CssClass="table table-striped" runat="server" AutoGenerateColumns="False" DataKeyNames="TradeId" DataSourceID="SqlDataSource2" AllowPaging="True" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" AllowSorting="True">
                     <Columns>
                         <asp:BoundField DataField="TradeId" HeaderText="TradeId" ReadOnly="True" SortExpression="TradeId" />
                         <asp:BoundField DataField="SecurityName" HeaderText="SecurityName" SortExpression="SecurityName" />
@@ -115,6 +115,18 @@
         
         
       </div>
+        
+        <div style="text-align: center">
+
+            <asp:Button ID="AddTradesBtn" class="btn btn-primary" runat="server" OnClick="AddTradesBtn_Click" Text="Add Trades" style="margin:5px"/>
+            
+            <asp:Button ID="GenRandom" class="btn btn-primary" runat="server" Text="Generate Random Trades" style="margin:5px" OnClick="GenRandom_Click"/>
+            
+            <asp:Button ID="TruncateTableBtn" class="btn btn-primary" runat="server" OnClick="TruncateTableBtn_Click" Text="Truncate Table" />
+
+
+        </div
+       
     </section>
             
 

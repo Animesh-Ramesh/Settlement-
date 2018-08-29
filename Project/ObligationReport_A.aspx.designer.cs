@@ -31,49 +31,49 @@ namespace Project {
         protected global::System.Web.UI.WebControls.HyperLink hyperlink1;
         
         /// <summary>
-        /// hyperlink2 control.
+        /// hyperlink2_a control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hyperlink2;
+        protected global::System.Web.UI.WebControls.HyperLink hyperlink2_a;
         
         /// <summary>
-        /// hyperlink3 control.
+        /// hyperlink3_a control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hyperlink3;
+        protected global::System.Web.UI.WebControls.HyperLink hyperlink3_a;
         
         /// <summary>
-        /// hyperlink4 control.
+        /// hyperlink4_a control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hyperlink4;
+        protected global::System.Web.UI.WebControls.HyperLink hyperlink4_a;
         
         /// <summary>
-        /// hyperlink5 control.
+        /// hyperlink5_a control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hyperlink5;
+        protected global::System.Web.UI.WebControls.HyperLink hyperlink5_a;
         
         /// <summary>
-        /// hyperlink6 control.
+        /// hyperlink6_a control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hyperlink6;
+        protected global::System.Web.UI.WebControls.HyperLink hyperlink6_a;
         
         /// <summary>
         /// GridView1 control.

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Shortage_A.aspx.cs" Inherits="Project.Shortage_A" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="BorrowingRates.aspx.cs" Inherits="Project.BorrowingRates" %>
 
 <!DOCTYPE html>
 
@@ -52,19 +52,19 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                       <asp:HyperLink ID="hyperlink2_a" CssClass="page-scroll" NavigateUrl="AllTrades" Text="All Trades" runat="server" /> 
+                        <asp:HyperLink ID="hyperlink2" Cssclass="page-scroll" NavigateUrl="TradeList" Text="Trade List" runat="server" /> 
                     </li>
                     <li>
-                        <asp:HyperLink ID="hyperlink3_a" CssClass="page-scroll" NavigateUrl="ObligationReport_A" Text="Obligation Report" runat="server" />
+                        <asp:HyperLink ID="hyperlink3" Cssclass="page-scroll" NavigateUrl="ObligationReport" Text="Obligation Report" runat="server" />
                     </li>
                     <li>
-                        <asp:HyperLink ID="hyperlink4_a" CssClass="page-scroll" NavigateUrl="Shortage_A" Text="Shortages" runat="server" />
+                        <asp:HyperLink ID="hyperlink4" Cssclass="page-scroll" NavigateUrl="Shortage_C" Text="Shortages" runat="server" />
                     </li>
                     <li>
-                        <asp:HyperLink ID="hyperlink5_a" CssClass="page-scroll" NavigateUrl="Statistics" Text="Statistics" runat="server" />
+                        <asp:HyperLink ID="hyperlink5" Cssclass="page-scroll" NavigateUrl="BorrowingRates" Text="Borrowing Rates" runat="server" />
                     </li>
                     <li>
-                         <asp:HyperLink ID="hyperlink6_a" CssClass="page-scroll" NavigateUrl="SignIn" Text="Sign Out" runat="server" />
+                         <asp:HyperLink ID="hyperlink6" Cssclass="page-scroll" NavigateUrl="SignIn" Text="Sign Out" runat="server" />
                     </li>
                 </ul>
             </div>
@@ -88,17 +88,14 @@
       <div class="container">
         
             <div class="table-responsive" >
+                Security Borrowing Rates
                 
-                Security Shortages
-                
-                
-                
-                <asp:GridView ID="GridView1" CssClass="table table-striped" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" DataSourceID="Shortage_A_security" ForeColor="Black">
+                                   
+                <asp:GridView ID="GridView1" CssClass="table table-striped" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" DataKeyNames="SecurityName" DataSourceID="SecurityBorrowingRates_C" ForeColor="Black">
                     <Columns>
-                        <asp:BoundField DataField="CustodianName" HeaderText="CustodianName" SortExpression="CustodianName" />
-                        <asp:BoundField DataField="SecurityName" HeaderText="SecurityName" SortExpression="SecurityName" />
-                        <asp:BoundField DataField="NetSecShortage" HeaderText="NetSecShortage" SortExpression="NetSecShortage" />
-                        <asp:BoundField DataField="Secshortage" HeaderText="Secshortage" SortExpression="Secshortage" />
+                        <asp:BoundField DataField="SecurityName" HeaderText="Security Name" ReadOnly="True" SortExpression="SecurityName" />
+                        <asp:BoundField DataField="MarketPrice" HeaderText="MarketPrice" SortExpression="MarketPrice" />
+                        <asp:BoundField DataField="BorrowingRate" HeaderText="BorrowingRate" SortExpression="BorrowingRate" />
                     </Columns>
                     <FooterStyle BackColor="#CCCCCC" />
                     <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
@@ -110,10 +107,9 @@
                     <SortedDescendingCellStyle BackColor="#CAC9C9" />
                     <SortedDescendingHeaderStyle BackColor="#383838" />
                 </asp:GridView>
-                <asp:SqlDataSource ID="Shortage_A_security" runat="server" ConnectionString="<%$ ConnectionStrings:CNS_SYSTEMConnectionString %>" SelectCommand="SELECT [CustodianName], [SecurityName], [NetSecShortage], [Secshortage] FROM [SecurityShortages]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SecurityBorrowingRates_C" runat="server" ConnectionString="<%$ ConnectionStrings:CNS_SYSTEMConnectionString %>" SelectCommand="SELECT * FROM [EquityBorrowingRate]"></asp:SqlDataSource>
                 
-                
-                
+                                   
             </div>
         
         
@@ -124,15 +120,9 @@
         
             <div class="table-responsive" >
                 
-                Funds Shortages
-
-                
-                
-                
-                <asp:GridView ID="GridView2" CssClass="table table-striped" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" DataKeyNames="CustodianName" DataSourceID="Shortage_A_funds" ForeColor="Black">
+                Fund Borrowing Rates<asp:GridView ID="GridView2" CssClass="table table-striped" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" DataSourceID="FundBorrowingRates_C" ForeColor="Black">
                     <Columns>
-                        <asp:BoundField DataField="CustodianName" HeaderText="CustodianName" ReadOnly="True" SortExpression="CustodianName" />
-                        <asp:BoundField DataField="NetFundShortage" HeaderText="NetFundShortage" SortExpression="NetFundShortage" />
+                        <asp:BoundField DataField="FundBorrowRate" HeaderText="FundBorrowRate" SortExpression="FundBorrowRate" />
                     </Columns>
                     <FooterStyle BackColor="#CCCCCC" />
                     <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
@@ -144,10 +134,7 @@
                     <SortedDescendingCellStyle BackColor="#CAC9C9" />
                     <SortedDescendingHeaderStyle BackColor="#383838" />
                 </asp:GridView>
-                <asp:SqlDataSource ID="Shortage_A_funds" runat="server" ConnectionString="<%$ ConnectionStrings:CNS_SYSTEMConnectionString %>" SelectCommand="SELECT [CustodianName], [NetFundShortage] FROM [FundShortages]"></asp:SqlDataSource>
-
-                
-                
+                <asp:SqlDataSource ID="FundBorrowingRates_C" runat="server" ConnectionString="<%$ ConnectionStrings:CNS_SYSTEMConnectionString %>" SelectCommand="SELECT * FROM [FundBorrowRate]"></asp:SqlDataSource>
                 
                 </div>
             </div>
@@ -201,4 +188,3 @@
     </form>
 </body>
 </html>
-

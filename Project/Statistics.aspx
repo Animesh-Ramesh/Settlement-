@@ -1,4 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin.aspx.cs" Inherits="Project.WebForm2" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Statistics.aspx.cs" Inherits="Project.Statistics" %>
+
+<%@ Register assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" namespace="System.Web.UI.DataVisualization.Charting" tagprefix="asp" %>
 
 <!DOCTYPE html>
 
@@ -29,18 +31,23 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <script src="http://code.jquery.com/jquery-1.8.2.js"></script>  
+    <script src="http://www.google.com/jsapi" type="text/javascript"></script>  
+   
 </head>
 <body id="page-top" class="index">
 
+    <form id="form1" runat="server">
+
     <!-- Navigation -->
-    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top" style="background-color:#333">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <asp:HyperLink ID="hyperlink1_a" CssClass="navbar-brand page-scroll" NavigateUrl="#" Text="Start Bootstrap" runat="server" /> 
+                <asp:HyperLink ID="hyperlink1" Cssclass="navbar-brand page-scroll" NavigateUrl="#" Text="Start Bootstrap" runat="server" /> 
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -72,24 +79,50 @@
     </nav>
 
     <!-- Header -->
-    <header>
-        <div class="container">
+       <%-- <header>
+            <div class="container">
             <div class="intro-text">
-                <div class="intro-lead-in">Welcome To Our Studio!</div>
+               <div class="intro-lead-in">Welcome To Our Studio!</div>
                 <div class="intro-heading">It's Nice To Meet You</div>
-                <a href="#services" class="page-scroll btn btn-xl"><% Response.Write((string)(Session["CName"]));%></a>
+                <a href="#services" class="page-scroll btn btn-xl">Tell Me More</a>
             </div>
-        </div>
-    </header>
+        </div>--%>
+        
+             <!-- Services -->
+    <section id="services">
+ 
+   
+        <div id="myChartDiv">  
+            <asp:Chart CssClass="center-block" ID="Chart1" runat="server" DataSourceID="TradesPerSecurity" Height="541px" Width="478px">
+                <series>
+                    <asp:Series ChartType="Pie" Name="Series1" XValueMember="SecurityName" YValueMembers="TotalQuantity"  >
+                    </asp:Series>
+                </series>
+                <chartareas>
+                    <asp:ChartArea Name="ChartArea1">
+                        <AxisY>
+                            <MajorGrid Enabled="false" />
+                        </AxisY>
+                        <AxisX>
+                            <MajorGrid Enabled="false" />
+                        </AxisX>
 
+                    </asp:ChartArea>
+                </chartareas>
+            </asp:Chart>
+            <asp:SqlDataSource ID="TradesPerSecurity" runat="server" ConnectionString="<%$ ConnectionStrings:CNS_SYSTEMConnectionString %>" SelectCommand="SELECT SecurityName, SUM(Quantity) AS TotalQuantity FROM TradeListDynamic GROUP BY SecurityName"></asp:SqlDataSource>
+        </div>  
+ 
+    </section>
+            
 
+        
 
     <footer>
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; Your Website 2016</span>
-                </div>
+                    <span class="copyright">Copyright &copy; Your Website 2016 ></span>          </div>
                 <div class="col-md-4">
                     <ul class="list-inline social-buttons">
                         <li><a href="#"><i class="fa fa-twitter"></i></a>
@@ -127,8 +160,7 @@
 
     <!-- Theme JavaScript -->
     <script src="Scripts/agency.min.js"></script>
+    </form>
 </body>
 </html>
-
-    
 

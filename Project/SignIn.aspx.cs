@@ -20,9 +20,15 @@ namespace Project
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Session.Abandon();
+            //Session["CName"] = null;
+            //Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            //Response.Cache.SetExpires(DateTime.UtcNow.AddHours(-1));
+            //Response.Cache.SetNoStore();
             if (!IsPostBack)
             {
-
+                
+             //   Session["CName"] = null;
                 connection.Open();
                 //String query = "SELECT CustodianName FROM Custodian";
                 //SqlCommand command = new SqlCommand(queryString, connection);

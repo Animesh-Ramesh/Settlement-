@@ -10,7 +10,7 @@
 namespace Project {
     
     
-    public partial class WebForm4 {
+    public partial class AddTrades {
         
         /// <summary>
         /// form1 control.
@@ -76,48 +76,66 @@ namespace Project {
         protected global::System.Web.UI.WebControls.HyperLink hyperlink6_a;
         
         /// <summary>
-        /// GridView1 control.
+        /// SecurityName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.TextBox SecurityName;
         
         /// <summary>
-        /// SqlDataSource2 control.
+        /// Qty control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
+        protected global::System.Web.UI.WebControls.TextBox Qty;
         
         /// <summary>
-        /// AddTradesBtn control.
+        /// Price control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AddTradesBtn;
+        protected global::System.Web.UI.WebControls.TextBox Price;
         
         /// <summary>
-        /// GenRandom control.
+        /// BMemName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button GenRandom;
+        protected global::System.Web.UI.WebControls.DropDownList BMemName;
         
         /// <summary>
-        /// TruncateTableBtn control.
+        /// MemberName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button TruncateTableBtn;
+        protected global::System.Web.UI.WebControls.SqlDataSource MemberName;
+        
+        /// <summary>
+        /// SMemName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList SMemName;
+        
+        /// <summary>
+        /// addingtrade control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button addingtrade;
     }
 }

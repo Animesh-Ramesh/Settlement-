@@ -10,7 +10,7 @@
 namespace Project {
     
     
-    public partial class WebForm4 {
+    public partial class BorrowingRates {
         
         /// <summary>
         /// form1 control.
@@ -31,49 +31,49 @@ namespace Project {
         protected global::System.Web.UI.WebControls.HyperLink hyperlink1;
         
         /// <summary>
-        /// hyperlink2_a control.
+        /// hyperlink2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hyperlink2_a;
+        protected global::System.Web.UI.WebControls.HyperLink hyperlink2;
         
         /// <summary>
-        /// hyperlink3_a control.
+        /// hyperlink3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hyperlink3_a;
+        protected global::System.Web.UI.WebControls.HyperLink hyperlink3;
         
         /// <summary>
-        /// hyperlink4_a control.
+        /// hyperlink4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hyperlink4_a;
+        protected global::System.Web.UI.WebControls.HyperLink hyperlink4;
         
         /// <summary>
-        /// hyperlink5_a control.
+        /// hyperlink5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hyperlink5_a;
+        protected global::System.Web.UI.WebControls.HyperLink hyperlink5;
         
         /// <summary>
-        /// hyperlink6_a control.
+        /// hyperlink6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hyperlink6_a;
+        protected global::System.Web.UI.WebControls.HyperLink hyperlink6;
         
         /// <summary>
         /// GridView1 control.
@@ -85,39 +85,30 @@ namespace Project {
         protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
-        /// SqlDataSource2 control.
+        /// SecurityBorrowingRates_C control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
+        protected global::System.Web.UI.WebControls.SqlDataSource SecurityBorrowingRates_C;
         
         /// <summary>
-        /// AddTradesBtn control.
+        /// GridView2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AddTradesBtn;
+        protected global::System.Web.UI.WebControls.GridView GridView2;
         
         /// <summary>
-        /// GenRandom control.
+        /// FundBorrowingRates_C control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button GenRandom;
-        
-        /// <summary>
-        /// TruncateTableBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button TruncateTableBtn;
+        protected global::System.Web.UI.WebControls.SqlDataSource FundBorrowingRates_C;
     }
 }

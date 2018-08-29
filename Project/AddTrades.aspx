@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin.aspx.cs" Inherits="Project.WebForm2" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AddTrades.aspx.cs" Inherits="Project.AddTrades" %>
 
 <!DOCTYPE html>
 
@@ -32,15 +32,17 @@
 </head>
 <body id="page-top" class="index">
 
+   
+
     <!-- Navigation -->
-    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top" style="background-color:#333">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <asp:HyperLink ID="hyperlink1_a" CssClass="navbar-brand page-scroll" NavigateUrl="#" Text="Start Bootstrap" runat="server" /> 
+                <asp:HyperLink ID="hyperlink1" Cssclass="navbar-brand page-scroll" NavigateUrl="#" Text="Start Bootstrap" runat="server" /> 
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -72,17 +74,67 @@
     </nav>
 
     <!-- Header -->
-    <header>
-        <div class="container">
+       <%-- <header>
+            <div class="container">
             <div class="intro-text">
-                <div class="intro-lead-in">Welcome To Our Studio!</div>
+               <div class="intro-lead-in">Welcome To Our Studio!</div>
                 <div class="intro-heading">It's Nice To Meet You</div>
-                <a href="#services" class="page-scroll btn btn-xl"><% Response.Write((string)(Session["CName"]));%></a>
+                <a href="#services" class="page-scroll btn btn-xl">Tell Me More</a>
             </div>
-        </div>
-    </header>
+        </div>--%>
+        
+
+     <form id="form1" runat="server">
+             <!-- Services -->
+    <section id="services">
+      <div class="container">
+        Add New Trades
+            
+
+	<div class="form-group"> <!-- Security Name -->
+		<label for="SecName" class="control-label">Security Name</label>
+		<asp:TextBox runat="server" Cssclass="form-control" id="SecurityName" name="SecName" />
+	</div>	
+
+	<div class="form-group"> <!-- Quantity -->
+		<label for="Qty" class="control-label">Quantity</label>
+		<asp:TextBox runat="server" Cssclass="form-control" id="Qty" name="Quantity" />
+	</div>					
+							
+	<div class="form-group"> <!-- Price -->
+		<label for="Price" class="control-label">Price</label>
+		<asp:TextBox runat="server" CssClass="form-control" id="Price" name="Price" />
+	</div>	
+
+	<div class="form-group"> <!-- Buying Member Name-->
+		<label for="BMemName" Cssclass="control-label">Buying Member Name</label>
+		
+        <asp:DropDownList ID="BMemName" class="form-control" runat="server" DataSourceID="MemberName" DataTextField="CustodianName" DataValueField="CustodianName">
+            </asp:DropDownList>
+	    <asp:SqlDataSource ID="MemberName" runat="server" ConnectionString="<%$ ConnectionStrings:CNS_SYSTEMConnectionString %>" SelectCommand="SELECT [CustodianName] FROM [Custodian]"></asp:SqlDataSource>
+	</div>
+	
+	<div class="form-group"> <!-- Selling Member Name-->
+		<label for="SMemName" class="control-label">Selling Member Name</label>
+
+        <asp:DropDownList ID="SMemName" class="form-control" runat="server" DataSourceID="MemberName" DataTextField="CustodianName" DataValueField="CustodianName">
+        </asp:DropDownList>
+		
 
 
+	</div>		
+	
+	<div class="form-group" style="text-align: center"> <!-- Submit Button -->
+        <asp:Button ID="addingtrade" class="btn btn-primary" runat="server" OnClick="AddTrade_Click" Text="Add Trade" />
+	</div>     
+	
+    
+        
+      </div>
+    </section>
+            
+
+        </form>
 
     <footer>
         <div class="container">
@@ -127,8 +179,7 @@
 
     <!-- Theme JavaScript -->
     <script src="Scripts/agency.min.js"></script>
+    
 </body>
 </html>
-
-    
 

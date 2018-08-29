@@ -52,19 +52,19 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <asp:HyperLink ID="hyperlink2" Cssclass="page-scroll" NavigateUrl="TradeList" Text="Trade List" runat="server" /> 
+                       <asp:HyperLink ID="hyperlink2_a" CssClass="page-scroll" NavigateUrl="AllTrades" Text="All Trades" runat="server" /> 
                     </li>
                     <li>
-                        <asp:HyperLink ID="hyperlink3" Cssclass="page-scroll" NavigateUrl="#" Text="Obligation Report" runat="server" />
+                        <asp:HyperLink ID="hyperlink3_a" CssClass="page-scroll" NavigateUrl="ObligationReport_A" Text="Obligation Report" runat="server" />
                     </li>
                     <li>
-                        <asp:HyperLink ID="hyperlink4" Cssclass="page-scroll" NavigateUrl="#" Text="Shortages" runat="server" />
+                        <asp:HyperLink ID="hyperlink4_a" CssClass="page-scroll" NavigateUrl="Shortage_A" Text="Shortages" runat="server" />
                     </li>
                     <li>
-                        <asp:HyperLink ID="hyperlink5" Cssclass="page-scroll" NavigateUrl="#" Text="Notification" runat="server" />
+                        <asp:HyperLink ID="hyperlink5_a" CssClass="page-scroll" NavigateUrl="Statistics" Text="Statistics" runat="server" />
                     </li>
                     <li>
-                         <asp:HyperLink ID="hyperlink6" Cssclass="page-scroll" NavigateUrl="#" Text="Sign Out" runat="server" />
+                         <asp:HyperLink ID="hyperlink6_a" CssClass="page-scroll" NavigateUrl="SignIn" Text="Sign Out" runat="server" />
                     </li>
                 </ul>
             </div>

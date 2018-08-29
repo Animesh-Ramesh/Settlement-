@@ -17,6 +17,16 @@
     <!-- Custom styles for this template -->
     <link href="Content/signin.css" rel="stylesheet"/>
 
+    <script type="text/javascript" language="javascript">
+     function DisableBackButton() {
+       window.history.forward()
+      }
+     DisableBackButton();
+     window.onload = DisableBackButton;
+     window.onpageshow = function(evt) { if (evt.persisted) DisableBackButton() }
+     window.onunload = function() { void (0) }
+ </script>
+
 </head>
 <body class="text-center" style="background-image: url(Logos/back.jpg); background-repeat: no-repeat; background-size: cover;" >
     <form class="form-signin" runat="server">
