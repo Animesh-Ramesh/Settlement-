@@ -10,7 +10,7 @@
     <meta name="description" content=""/>
     <meta name="author" content=""/>
     <link rel="icon" href="Logos/citi_logo.png" />
-    <title>Signin Template for Bootstrap</title>
+    <title>SignIn to CNS</title>
 
     <!-- Bootstrap core CSS -->
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
