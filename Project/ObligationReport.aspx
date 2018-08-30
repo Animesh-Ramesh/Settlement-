@@ -42,7 +42,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <asp:HyperLink ID="hyperlink1" Cssclass="navbar-brand page-scroll" NavigateUrl="Custodian.aspx" Text="Coffee Crew" runat="server" /> 
+                <asp:HyperLink ID="hyperlink1" Cssclass="navbar-brand page-scroll" NavigateUrl="Custodian.aspx" Text="The Coffee Crew" runat="server" /> 
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -88,8 +88,13 @@
       <div class="container">
         
             <div class="table-responsive" >
-                
-                Security Obligations<asp:GridView ID="GridView1" CssClass="table table-striped" runat="server" AutoGenerateColumns="False" DataSourceID="ObligationReport_ds_C" AllowPaging="True" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black">
+                <div style="text-align: center">
+                <h3>
+                    
+                    Security Obligations</h3>
+                </div>
+                <br />
+                <asp:GridView ID="GridView1" CssClass="table table-striped" runat="server" AutoGenerateColumns="False" DataSourceID="ObligationReport_ds_C" AllowPaging="True" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black">
                     <Columns>
                         <asp:BoundField DataField="CustodianName" HeaderText="Custodian Name" SortExpression="CustodianName" />
                         <asp:BoundField DataField="SecurityName" HeaderText="Security Name" SortExpression="SecurityName" />
@@ -109,21 +114,31 @@
           <SelectParameters>
               <asp:SessionParameter Name ="user" SessionField ="CName" ConvertEmptyStringToNull ="True" />
           </SelectParameters>
-                </asp:SqlDataSource>                
+                </asp:SqlDataSource>
+                <div style="text-align: center">
+                <asp:Button ID="ExportToPDFSec" class="btn btn-primary" runat="server" Text="Download as PDF" OnClick="ExportToPDFSec_Click"  />
+            </div>
             </div>
         
         
       </div>
+
+        <br />
+        <br />
         <div class="container">
 
             
         
             <div class="table-responsive" >
-                
-                Funds Obligations<asp:GridView ID="GridView2" CssClass= "table table-striped" runat="server" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" DataSourceID="ObligationReport_ds_C_funds" ForeColor="Black">
+                <div style="text-align: center">
+                <h3>
+                    Funds Obligations </h3>
+                </div>
+                <br />
+                <asp:GridView ID="GridView2" CssClass= "table table-striped" runat="server" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" DataSourceID="ObligationReport_ds_C_funds" ForeColor="Black">
                     <Columns>
-                        <asp:BoundField DataField="CustodianName" HeaderText="CustodianName" SortExpression="CustodianName" />
-                        <asp:BoundField DataField="FundsNetSettle" HeaderText="FundsNetSettle" SortExpression="FundsNetSettle" />
+                        <asp:BoundField DataField="CustodianName" HeaderText="Custodian Name" SortExpression="CustodianName" />
+                        <asp:BoundField DataField="FundsNetSettle" HeaderText="Funds Net Settle($)" SortExpression="FundsNetSettle" />
                     </Columns>
                     <FooterStyle BackColor="#CCCCCC" />
                     <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
@@ -140,11 +155,12 @@
                         <asp:SessionParameter Name ="user" SessionField ="CName" ConvertEmptyStringToNull ="True" />
                     </SelectParameters>
                 </asp:SqlDataSource>
+                <div style="text-align: center">
+                <asp:Button ID="ExportToPDFFund" class="btn btn-primary" runat="server" Text="Download as PDF" OnClick="ExportToPDFFund_Click"  />
+            </div>
                 
                 </div>
-            <div style="text-align: center">
-                <asp:Button ID="ExportToPDF" class="btn btn-primary" runat="server" Text="Download as PDF" OnClick="ExportToPDF_Click"  />
-            </div>
+            
             </div>
     </section>
             
@@ -155,7 +171,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; Coffee Crew 2018 </span>          </div>
+                    <span class="copyright">Copyright &copy; The Coffee Crew 2018 </span>          </div>
                 <%--<div class="col-md-4">
                     <ul class="list-inline social-buttons">
                         <li><a href="#"><i class="fa fa-twitter"></i></a>

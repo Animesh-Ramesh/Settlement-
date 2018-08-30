@@ -40,7 +40,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <asp:HyperLink ID="hyperlink1" Cssclass="navbar-brand page-scroll" NavigateUrl="Custodian.aspx" Text="Coffee Crew" runat="server" /> 
+                <asp:HyperLink ID="hyperlink1" Cssclass="navbar-brand page-scroll" NavigateUrl="Custodian.aspx" Text="The Coffee Crew" runat="server" /> 
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -77,7 +77,7 @@
             <div class="intro-text">
                 <div class="intro-lead-in">Welcome!</div>
                 <div class="intro-heading" >Nice To Meet You, <%Response.Write((string)(Session["CName"]));%></div>
-                <a href="#" class="page-scroll btn btn-xl">View Profile</a>
+                <a href="Profile" class="page-scroll btn btn-xl">View Profile</a>
             </div>
         </div>
     </header>
@@ -88,7 +88,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; Coffee Crew 2018</span>
+                    <span class="copyright">Copyright &copy; The Coffee Crew 2018</span>
                 </div>
                 <%--<div class="col-md-4">
                     <ul class="list-inline social-buttons">

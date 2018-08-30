@@ -43,7 +43,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <asp:HyperLink ID="hyperlink1" Cssclass="navbar-brand page-scroll" NavigateUrl="Admin.aspx" Text="Coffee Crew" runat="server" /> 
+                <asp:HyperLink ID="hyperlink1" Cssclass="navbar-brand page-scroll" NavigateUrl="Admin.aspx" Text="The Coffee Crew" runat="server" /> 
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -91,9 +91,10 @@
              <!-- Services -->
     <section id="services">
       <div class="container">
-        Add New Trades
-            
-
+          <div style="text-align: center">
+       <h3> Add New Trades</h3>
+            </div>
+          <br />
 	<div class="form-group"> <!-- Security Name -->
 		<label for="SecName2" class="control-label">Security Name</label>
         <asp:DropDownList ID="SecName2" class="form-control" runat="server" DataSourceID="SecurityNames" DataTextField="SecurityName" DataValueField="SecurityName"></asp:DropDownList>
@@ -103,12 +104,14 @@
 	<div class="form-group"> <!-- Quantity -->
 		<label for="Qty" class="control-label">Quantity</label>
         <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="Qty" ErrorMessage="* Must be positive" MinimumValue="0" Type="Integer" MaximumValue="2147483647" Font-Italic="True" ForeColor="Red"></asp:RangeValidator>
+		<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="Qty" ErrorMessage="* Required" Font-Italic="True" ForeColor="Red"></asp:RequiredFieldValidator>
 		<asp:TextBox runat="server" Cssclass="form-control" id="Qty" name="Quantity" />
 	</div>					
 							
 	<div class="form-group"> <!-- Price -->
 		<label for="Price" class="control-label">Price</label>
         <asp:RangeValidator ID="RangeValidator2" runat="server" ControlToValidate="Price" ErrorMessage="* Must be positive" MaximumValue="2147483647" MinimumValue="0" Type="Double" Font-Italic="True" ForeColor="Red"></asp:RangeValidator>
+		<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="Price" ErrorMessage="* Required" Font-Italic="True" ForeColor="Red"></asp:RequiredFieldValidator>
 		<asp:TextBox runat="server" CssClass="form-control" id="Price" name="Price" />
 	</div>	
 
@@ -150,7 +153,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; Coffee Crew 2018</span>
+                    <span class="copyright">Copyright &copy; The Coffee Crew 2018</span>
                 </div>
                 <%--<div class="col-md-4">
                     <ul class="list-inline social-buttons">

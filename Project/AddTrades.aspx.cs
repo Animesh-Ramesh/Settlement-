@@ -20,8 +20,7 @@ namespace Project
 
         protected void AddTrade_Click(object sender, EventArgs e)
         {
-            string y = BMemName.SelectedItem.Text;
-            string z= SMemName.SelectedItem.Text;
+
             //Checking bmemname and smemname equality
             if (BMemName.SelectedItem.Text.Equals(SMemName.SelectedItem.Text))
             {

@@ -10,16 +10,7 @@
 namespace Project {
     
     
-    public partial class ObligationReport {
-        
-        /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+    public partial class Profile {
         
         /// <summary>
         /// hyperlink1 control.
@@ -31,67 +22,49 @@ namespace Project {
         protected global::System.Web.UI.WebControls.HyperLink hyperlink1;
         
         /// <summary>
-        /// hyperlink2 control.
+        /// hyperlink2_a control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hyperlink2;
+        protected global::System.Web.UI.WebControls.HyperLink hyperlink2_a;
         
         /// <summary>
-        /// hyperlink3 control.
+        /// hyperlink3_a control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hyperlink3;
+        protected global::System.Web.UI.WebControls.HyperLink hyperlink3_a;
         
         /// <summary>
-        /// hyperlink4 control.
+        /// hyperlink4_a control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hyperlink4;
+        protected global::System.Web.UI.WebControls.HyperLink hyperlink4_a;
         
         /// <summary>
-        /// hyperlink5 control.
+        /// hyperlink5_a control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hyperlink5;
+        protected global::System.Web.UI.WebControls.HyperLink hyperlink5_a;
         
         /// <summary>
-        /// GridView1 control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
-        
-        /// <summary>
-        /// ObligationReport_ds_C control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource ObligationReport_ds_C;
-        
-        /// <summary>
-        /// ExportToPDFSec control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ExportToPDFSec;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
         /// GridView2 control.
@@ -103,21 +76,30 @@ namespace Project {
         protected global::System.Web.UI.WebControls.GridView GridView2;
         
         /// <summary>
-        /// ObligationReport_ds_C_funds control.
+        /// Bank control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource ObligationReport_ds_C_funds;
+        protected global::System.Web.UI.WebControls.SqlDataSource Bank;
         
         /// <summary>
-        /// ExportToPDFFund control.
+        /// GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ExportToPDFFund;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
+        
+        /// <summary>
+        /// Demat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource Demat;
     }
 }

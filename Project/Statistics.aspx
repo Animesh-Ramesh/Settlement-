@@ -47,7 +47,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <asp:HyperLink ID="hyperlink1" Cssclass="navbar-brand page-scroll" NavigateUrl="Admin.aspx" Text="Coffee Crew" runat="server" /> 
+                <asp:HyperLink ID="hyperlink1" Cssclass="navbar-brand page-scroll" NavigateUrl="Admin.aspx" Text="The Coffee Crew" runat="server" /> 
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -94,7 +94,7 @@
    
         <div id="myChartDiv"> 
             <div class="caption">
-                <div class="text-center"> <label ID="figure1" runat="server"  > Securities Traded Today</label></div></div>
+                <div class="text-center"> <h4> Securities Traded Today </h4></div></div>
         </div> 
             <asp:Chart CssClass="center-block" ID="Chart1" runat="server" DataSourceID="TradesPerSecurity" Height="496px" Width="426px">
                 <series>
@@ -125,7 +125,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; Coffee Crew 2018 </span>          </div>
+                    <span class="copyright">Copyright &copy; The Coffee Crew 2018 </span>          </div>
                 <%--<div class="col-md-4">
                     <ul class="list-inline social-buttons">
                         <li><a href="#"><i class="fa fa-twitter"></i></a>
